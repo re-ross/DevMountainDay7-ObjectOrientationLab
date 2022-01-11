@@ -96,12 +96,17 @@ console.log(color, make, model, year);
 
 function greeting(obj) {
   //Code Here
-  let { title, firstName, lastName } = obj;
+  const { title, firstName, lastName } = obj;
   // Do not edit the code below.
   return "Hello, " + title + " " + firstName + " " + lastName + "!";
   // Do not edit the code above.
 }
-
+let test = {
+  title: "Mr",
+  firstName: "Ryan",
+  lastName: "Ross",
+};
+console.log(greeting(test));
 //////////////////////////// PROBLEM 8 ////////////////////////////
 
 /*
@@ -113,14 +118,10 @@ function greeting(obj) {
 */
 
 //Code Here
-let totalPopulation = {
-  Utah: 3.206,
-  California: 39.51,
-  Texas: 29,
-  Arizona: 7.279,
-};
-
-let { Utah, California, Texas, Arizona } = totalPopulation;
+function totalPopulation(obj) {
+  const { utah, california, texas, arizona } = obj;
+  return utah + california + texas + arizona;
+}
 
 //////////////////////////// PROBLEM 9 ////////////////////////////
 
@@ -133,7 +134,10 @@ let { Utah, California, Texas, Arizona } = totalPopulation;
 */
 
 //Code Here
-
+function ingredients(obj) {
+  const { carb, fat, protein } = obj;
+  return [carb, fat, protein];
+}
 //////////////////////////// PROBLEM 10 ////////////////////////////
 // Do not edit the code below.
 var user = {
@@ -153,14 +157,16 @@ var user = {
 */
 
 //Code Here
-
+user.name = "Bryan G. Smith";
+user.email = "bryan.smith@devmount.in";
+console.log(user);
 //////////////////////////// PROBLEM 11 ////////////////////////////
 /*
   Using the user object above, delete the users age off of the object.
 */
 
 //Code Here
-
+delete user.age;
 //////////////////////////// PROBLEM 12 ////////////////////////////
 /*
   Create a class called 'Cat'. Make sure to call your constructor, and require these 3 parameters: name, age, color.
@@ -169,7 +175,16 @@ var user = {
 */
 
 //Code here
+class Cat {
+  constructor(name, age, color) {
+    this.name = name;
+    this.age = age;
+    this.color = color;
+  }
+}
 
+let noriCat = new Cat("Nori", "3", "black and white");
+console.log(noriCat.name);
 //////////////////////////// PROBLEM 13 ////////////////////////////
 /*
   Create a class called 'Wizard'. Make sure to call your constructor, and require these 3 parameters: name, age, favoriteSpell.
@@ -179,7 +194,18 @@ var user = {
 */
 
 //Code here
-
+class Wizard {
+  constructor(name, age, favoriteSpell) {
+    this.name = name;
+    this.age = age;
+    this.favoriteSpell = favoriteSpell;
+  }
+  castSpell() {
+    console.log(this.name + " has cast " + this.favoriteSpell);
+  }
+}
+let kvothe = new Wizard("Kvothe", 32, "Lightning Bolt!");
+kvothe.castSpell();
 //////////////////////////// PROBLEM 14 ////////////////////////////
 /*
     Write a class called Phone. We'll use it as if we were creating
@@ -204,7 +230,23 @@ var user = {
 */
 
 //Code Here
-
+class Phone {
+  constructor(brand, model, storage, color, price, sold) {
+    this.brand = brand;
+    this.model = model;
+    this.storage = storage;
+    this.color = color;
+    this.price = price;
+    this.sold = false;
+  }
+  sell() {
+    this.sold = true;
+    return `{brand} {model} has been sold`;
+  }
+  changePrice(newPrice) {
+    this.price = newPrice;
+  }
+}
 /*
     Next make three new phone instances using your class.
     Send in values of your choice. They should match these data types:
@@ -216,6 +258,9 @@ var user = {
 */
 
 //Code Here
+let phone1 = new Phone("Apple", "Ipone", 256, "Blue", 1000);
+let phone2 = new Phone("Samsung", "Galaxy", 512, "Black", 1100);
+let phone3 = new Phone("Nokia", "Brick", 125, "Grey", 2);
 
 /* 
   Call the changePrice function on one of your phones, 
@@ -225,7 +270,8 @@ var user = {
 */
 
 //Code Here
-
+phone3.changePrice(1);
+console.log(phone3);
 /*
   Now call the sell method on one of your other phone objects
 
