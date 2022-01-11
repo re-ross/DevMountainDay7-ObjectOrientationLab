@@ -43,20 +43,30 @@ console.log(dog["color"]);
 */
 
 //Code here
-
+let favoriteThings = {
+  band: "The Wonder Years",
+  food: "Sushi",
+  person: "Cheyenne",
+  book: "The Name of the Wind",
+  movie: "Skyfall",
+  holiday: "Christmas",
+};
 /*
   After you've made your object, use bracket or dot notation to add another key named 'car' with the value being your favorite car and then another key named 'show' with the value being your favorite show.
 */
 
 //Code here
-
+favoriteThings.car = "Aston Martin Vanquish";
+favoriteThings.show = "Demon Slayer";
 /*
   Now use bracket or dot notation to change the value of the food key in your favoriteThings object to be 'Chicken Nuggets'
   and change the value of the book key in your favoriteThings object to be 'Harry Potter'. (If they were either of those things already, change them to something else.)
 */
 
 //Code here
-
+favoriteThings.food = "Chicken Nuggets";
+favoriteThings.book = "Harry Potter";
+console.log(favoriteThings);
 //////////////////////////// PROBLEM 6 ////////////////////////////
 
 // Do not edit the code below.
@@ -73,7 +83,9 @@ var carDetails = {
 */
 
 //Code Here
+let { color, make, model, year } = carDetails;
 
+console.log(color, make, model, year);
 //////////////////////////// PROBLEM 7 ////////////////////////////
 
 /*
@@ -84,7 +96,7 @@ var carDetails = {
 
 function greeting(obj) {
   //Code Here
-
+  let { title, firstName, lastName } = obj;
   // Do not edit the code below.
   return "Hello, " + title + " " + firstName + " " + lastName + "!";
   // Do not edit the code above.
@@ -101,6 +113,14 @@ function greeting(obj) {
 */
 
 //Code Here
+let totalPopulation = {
+  Utah: 3.206,
+  California: 39.51,
+  Texas: 29,
+  Arizona: 7.279,
+};
+
+let { Utah, California, Texas, Arizona } = totalPopulation;
 
 //////////////////////////// PROBLEM 9 ////////////////////////////
 
