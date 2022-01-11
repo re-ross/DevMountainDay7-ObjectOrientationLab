@@ -279,7 +279,8 @@ console.log(phone3);
 */
 
 //Code Here
-
+phone1.sell();
+console.log(phone1.sold);
 //////////////////////////// PROBLEM 15 ////////////////////////////
 
 /*
