@@ -298,7 +298,9 @@ const colors = {
 //do not edit this object
 
 //Code Here
-
+let colorsCopy = {};
+colorsCopy = { ...colors };
+console.log(colorsCopy);
 /*
  Now use the spread operator to combine the following 2 objects into one. 
  Call the new variable helensInfo. 
@@ -324,9 +326,11 @@ const shippingInfo = {
 //do not edit the objects above
 
 //Code Here
+let helensInfo = {};
+helensInfo = { ...contactInfo, ...shippingInfo };
 
 //Print helensInfo to see what it looks like, there should be no repeating properties.
-
+console.log(helensInfo);
 //////////////////////////// PROBLEM 16 ////////////////////////////
 
 /*
@@ -340,13 +344,24 @@ const shippingInfo = {
 */
 
 //Code Here
-
+class Vehicle {
+  constructor(passengers, color, mileage) {
+    this.capacity = passengers;
+    this.color = color;
+    this.mileage = mileage;
+  }
+  move(miles) {
+    this.mileage += miles;
+    return this.mileage;
+  }
+}
 /*
   Create a vehicle using your new class and save it to a variable called myFirstVehicle
 */
 
 //Code Here
-
+let myFirstVehicle = new Vehicle(2, "Black", 1000);
+console.log(myFirstVehicle);
 /* 
   Now we'll create a class that's based off of the vehicle class. 
 
@@ -356,17 +371,26 @@ const shippingInfo = {
 */
 
 //Code Here
+class Motorcycle extends Vehicle {
+  constructor(passengers, color, mileage, make, isCool) {
+    super(passengers, color, mileage);
+    this.make = make;
+    this.isCool = true;
+  }
+}
 
 /*
   Create a Motorcycle using your new class and save it to a variable called myFirstMotorcycle
 */
 
 //Code Here
-
+let myFirstMotorcycle = new Motorcycle(1, "white", 10000, "Triumph", true);
+console.log(myFirstMotorcycle);
 /*
   Call the move function on myFirstMotorcycle (don't forget the parameter)
 */
-
+myFirstMotorcycle.move(1000);
+console.log(myFirstMotorcycle);
 /*
   Let's make another class based off of Vehicle. 
 
@@ -384,28 +408,53 @@ const shippingInfo = {
 */
 
 //Code Here
-
+class Boat extends Vehicle {
+  constructor(passengers, color, mileage, name, type, isSeaWorthy) {
+    super(passengers, color, mileage);
+    this.name = name;
+    this.type = type;
+    this.isSeaWorthy = false;
+  }
+  checkSeaWorthiness() {
+    if (this.isSeaWorthy === true) {
+      console.log(
+        "The " +
+          this.color +
+          " " +
+          this.type +
+          " " +
+          this.name +
+          " is seaworthy!"
+      );
+    } else console.log(`You need to get your ` + this.type + ` in shape!`);
+  }
+  performMaintenance() {
+    this.isSeaWorthy = true;
+  }
+}
 /*
   Create a new boat using your class. You can choose whatever values you like for all the 
   properties except isSeaworthy -- make that one false. Call your variable myFirstBoat.
 */
 
 //Code Here
-
+let myFirstBoat = new Boat(10, "white", 1000, "The Jackdaw", "schooner", false);
 /*
   Call the checkSeaworthiness method on your new boat
 */
 
 //Code Here
+console.log(myFirstBoat.checkSeaWorthiness());
 
 /*
   Now run the performMaintenance method on your boat
 */
 
 //Code Here
-
+myFirstBoat.performMaintenance();
 /*
   Check the seaworthiness once more (you should be ready for the water!)
 */
 
 //Code Here
+console.log(myFirstBoat.checkSeaWorthiness());
