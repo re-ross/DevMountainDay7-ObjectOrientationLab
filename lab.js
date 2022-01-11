@@ -413,10 +413,10 @@ class Boat extends Vehicle {
     super(passengers, color, mileage);
     this.name = name;
     this.type = type;
-    this.isSeaWorthy = false;
+    this.isSeaWorthy = "false";
   }
   checkSeaWorthiness() {
-    if (this.isSeaWorthy === true) {
+    if (this.isSeaWorthy === "true") {
       console.log(
         "The " +
           this.color +
@@ -424,12 +424,12 @@ class Boat extends Vehicle {
           this.type +
           " " +
           this.name +
-          " is seaworthy!"
+          " is sea worthy!"
       );
     } else console.log(`You need to get your ` + this.type + ` in shape!`);
   }
   performMaintenance() {
-    this.isSeaWorthy = true;
+    this.isSeaWorthy = "true";
   }
 }
 /*
@@ -438,13 +438,20 @@ class Boat extends Vehicle {
 */
 
 //Code Here
-let myFirstBoat = new Boat(10, "white", 1000, "The Jackdaw", "schooner", false);
+let myFirstBoat = new Boat(
+  10,
+  "white",
+  1000,
+  "The Jackdaw",
+  "schooner",
+  "false"
+);
 /*
   Call the checkSeaworthiness method on your new boat
 */
 
 //Code Here
-console.log(myFirstBoat.checkSeaWorthiness());
+myFirstBoat.checkSeaWorthiness();
 
 /*
   Now run the performMaintenance method on your boat
@@ -457,4 +464,4 @@ myFirstBoat.performMaintenance();
 */
 
 //Code Here
-console.log(myFirstBoat.checkSeaWorthiness());
+myFirstBoat.checkSeaWorthiness();
