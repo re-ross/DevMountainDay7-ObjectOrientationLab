@@ -135,8 +135,9 @@ function totalPopulation(obj) {
 
 //Code Here
 function ingredients(obj) {
+  let newArr = [];
   const { carb, fat, protein } = obj;
-  return [carb, fat, protein];
+  newArr.push(carb, fat, protein);
 }
 //////////////////////////// PROBLEM 10 ////////////////////////////
 // Do not edit the code below.
